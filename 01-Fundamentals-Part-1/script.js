@@ -29,7 +29,7 @@ age = 31;
 // : To declare variables that are not supposed to change at any point in the future.
 // : Can't mutate a variable.
 // : Empty variable (X) (Immutable)
-const birthYear = 2000;
+//const birthYear = 2000;
 // birthYear = 1990; // Error
 // conts job; // Error. It needs to be initialised.
 
@@ -80,3 +80,55 @@ console.log(y, z);
 // Grouping operator
 const avgAge = (ageSoo + ageKim) / 2;
 console.log(ageSoo, ageKim, avgAge);
+
+
+///////////////////////////////////////////////
+// 17. Strings and Template Literals -> `(Backtick) with ${VARIABLE}
+// Convinient, Cleaner.
+
+
+// const firstName = 'Soo';
+const birthYear = 2000;
+const job = 'Web Developer';
+const year = 2035;
+
+const soo = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + "!";
+
+console.log(soo);
+
+//
+const sooNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`;
+console.log(sooNew);
+
+console.log(`Back ticks...`)
+
+console.log('String with \n multiple \n lines');
+
+console.log(`String with
+multiple
+lines`)
+
+
+// 18. Taking Decisions: if / else Statements
+// eg.1
+const yourAge = 15;
+
+if (yourAge >= 18) {
+    console.log('You can start driving license 🚗')
+} else {
+    const yearsLeft = 18 - yourAge;
+    console.log(`You are too young. Wait another ${yearsLeft} years :) `)
+}
+
+// eg.2
+const yourBirthYear = 2012;
+
+let century;
+
+if (yourBirthYear <= 2000) {
+    century = 20;
+} else {
+    century = 21;
+}
+
+console.log(century);
