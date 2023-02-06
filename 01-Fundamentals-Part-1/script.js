@@ -132,3 +132,137 @@ if (yourBirthYear <= 2000) {
 }
 
 console.log(century);
+
+
+
+///////////////////////////////////////////////
+// 20. Type Conversion(Manual) and Coercion(Automatic)
+
+//// type conversion
+const inputYear = '1991';
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number('Soo')); //NaN
+console.log(typeof NaN); //number
+
+console.log(String(23), 23); //String, Number
+
+//// type coercion
+console.log('I am ' + 23 + ' years old'); // Number -> String
+
+//* '-' oper ator triggers the opposite converson *
+
+console.log('23' - '10' - 3); //"13"-3 = 10
+console.log('23' + '10' + 3); //23103
+console.log(typeof ('23' + '10' - 3)); //2307, number
+console.log('23' - '10' + 3); //16
+
+console.log('23' * "2"); //46, Number
+
+let n = '1' + 1; //"11"
+n = n - 1; //"11" - 1 = 10
+console.log(n);
+
+
+///////////////////////////////////////////////
+// 21. Truthy and Falsy Values
+
+// '5 Falsy Values' : 0, '', undefined, null, NaN(Not a Number)
+
+console.log(Boolean(0)); //false
+console.log(Boolean(undefined)); //false 
+console.log(Boolean("Soo")); //true
+console.log(Boolean({})); //true
+console.log(Boolean('')); //false
+
+// const money = 0; // False
+const money = 100; // True
+if (money) {
+    console.log("Don't spend it all.");
+} else {
+    console.log("You should get a job!");
+}
+
+// let height; // False
+// let height = 0; // False
+let height = 123; // True
+if (height) {
+    console.log("YAY! Height is defined.");
+} else {
+    console.log("Height is UNDEFINED.")
+}
+
+
+
+// 22. Equality Operators: == vs. ===
+// "==" => Lose Equality Operator | Type Coercion 'O'
+// "===" => Strict Equality Operator | Type Coercion 'X'
+// *** As a general rule for clean code ***
+// AVOID '==' AS MUCH AS YOU CAN. 
+// ALWAYS USE '===' WHEN COMPARING VALUES.
+
+const age2 = "18";
+if (age2 === 18) console.log('You just became an adult. (Strict)');
+if (age2 == 18) console.log('You just became an adult. (Loose)');
+
+console.log(18 === 18) //true 
+console.log("18" === 18) //false 
+console.log("18" == 18) //true 
+console.log("18" == 19) //true 
+
+// const favourite = prompt("What's your favourite number?");
+// console.group(favourite);
+// console.group(typeof (favourite)); // String
+
+// if (Number(favourite) == 23) { // '23' == 23 => True
+//     console.log("23 is an amazing number!");
+// }
+
+// if (Number(favourite) === 23) { // '23' === 23 => False
+//     console.log("23 is an amazing number!");
+// } else if (Number(favourite) === 7) {
+//     console.log("7 is an amazing number!");
+// } else {
+//     console.log("Number is not 23 or 7.");
+// };
+
+// if (Number(favourite) !== 23) console.log('Why not 23?');
+
+
+
+// 23. Boolean Logic
+// AND => True = When ALL are true
+// OR => True = When ONE is true
+// NOT => Inverts true/false value
+
+const age3 = 16;
+// A: Age is greater or equal 20 => False
+// B: Age is less than 30 => True
+
+// !A = True
+// A AND B => False
+// A OR B => True
+// !A AND B => True
+// A or !B => False
+
+
+
+
+// 24. Logical Operators
+
+const hasDriversLicense = true; // A
+const hasGoodVision = false; // B
+
+console.log(hasDriversLicense && hasGoodVision); //false
+console.log(hasDriversLicense || hasGoodVision); //true
+console.log(!hasDriversLicense); //false
+
+if (hasDriversLicense && hasGoodVision) {
+    console.log("She is able to drive!");
+} else {
+    console.log("Someome else should drive..");
+};
+
+const isTired = true // C
+console.log(hasDriversLicense && hasGoodVision && !isTired);
